@@ -4,18 +4,25 @@
 class Cerebro < Formula
   desc "Manage and secure Linux servers over Tailscale SSH"
   homepage "https://github.com/almeidx/cerebro"
-  version "0.1.1-alpha.2"
+  version "0.1.1-alpha.3"
   license "Apache-2.0"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/almeidx/cerebro/releases/download/v0.1.1-alpha.3/cerebro-0.1.1-alpha.3-aarch64-apple-darwin.tar.gz"
+      sha256 "b073ecd0209fc9a938563c35b1bd8a934b722a4c9808fd884d44548318113be6"
+    end
+  end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/cerebro/releases/download/v0.1.1-alpha.2/cerebro-0.1.1-alpha.2-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "8a928334ebf23d435da08ec09c63874a1e310a90e0fdf4d6d96be03e2c00b04f"
+      url "https://github.com/almeidx/cerebro/releases/download/v0.1.1-alpha.3/cerebro-0.1.1-alpha.3-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "a16c2f4859fd27eb469dee254e41b556bfd0e6dbf15374cf58fe6b40fa98b472"
     end
 
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/cerebro/releases/download/v0.1.1-alpha.2/cerebro-0.1.1-alpha.2-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "2d81867717f97738d951a41176fc53e3f5587b9f23cdc70d132f0d29038b19aa"
+      url "https://github.com/almeidx/cerebro/releases/download/v0.1.1-alpha.3/cerebro-0.1.1-alpha.3-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "485525131319b96cc450700c4d7f452ca9e9e10b075ea007ba648c3efe93707d"
     end
   end
 

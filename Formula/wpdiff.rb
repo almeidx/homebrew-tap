@@ -4,18 +4,25 @@
 class Wpdiff < Formula
   desc "Diff locally installed WordPress plugins against their upstream versions"
   homepage "https://github.com/almeidx/wpdiff"
-  version "0.1.1-alpha.1"
+  version "0.1.1-alpha.2"
   license "Apache-2.0"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/almeidx/wpdiff/releases/download/v0.1.1-alpha.2/wpdiff-0.1.1-alpha.2-aarch64-apple-darwin.tar.gz"
+      sha256 "6fed0a28fcf669d6a9a5ceca1404116a9972534190ef077aa5c9b025f33bb9e6"
+    end
+  end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/wpdiff/releases/download/v0.1.1-alpha.1/wpdiff-0.1.1-alpha.1-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "2c6bb1e589e85a69d311c571361f28eea0175f25869fae0024a742fa5ee348eb"
+      url "https://github.com/almeidx/wpdiff/releases/download/v0.1.1-alpha.2/wpdiff-0.1.1-alpha.2-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "e7a38fdbc89063de32494563d2a9bd2ca9dfa2e0d5d9f2b577a8752b47d24b25"
     end
 
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/wpdiff/releases/download/v0.1.1-alpha.1/wpdiff-0.1.1-alpha.1-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "17c36e870741c2e1eb9bb13d2a57faf07f1b031e597113fae0bf32f7f0ab8a4b"
+      url "https://github.com/almeidx/wpdiff/releases/download/v0.1.1-alpha.2/wpdiff-0.1.1-alpha.2-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "4b12757590980094e3cbabe64063fb565328798cedd3c3a55055a97d3de070c3"
     end
   end
 
