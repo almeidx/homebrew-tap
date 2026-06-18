@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate tap
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ruby syntax
+        run: |
+          ruby -c bin/update-formulae
+          ruby -c Formula/wpdiff.rb
+          ruby -c Formula/uatu.rb
+          ruby -c Formula/cerebro.rb
+
+      - name: Homebrew style
+        run: brew style Formula/wpdiff.rb Formula/uatu.rb Formula/cerebro.rb bin/update-formulae
