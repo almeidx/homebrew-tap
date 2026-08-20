@@ -4,25 +4,25 @@
 class Uatu < Formula
   desc "Observe cron jobs without replacing cron"
   homepage "https://github.com/almeidx/uatu"
-  version "0.1.1-alpha.6"
+  version "0.1.1-alpha.7"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.6/uatu-0.1.1-alpha.6-aarch64-apple-darwin.tar.gz"
-      sha256 "2dc340d55e6108489b126dbad404a66abd6522a413accc015aed9f17803899eb"
+      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.7/uatu-0.1.1-alpha.7-aarch64-apple-darwin.tar.gz"
+      sha256 "b95b22ac734818786eaf0d43234f4dc57260befdaa5eb1e454f90cb9be976cb1"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.6/uatu-0.1.1-alpha.6-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "bac5276f74f05a56e54fccd0e25a38358056189e3e6254b46099c8ffa180dcca"
+      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.7/uatu-0.1.1-alpha.7-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "7bfa25f01167393341790475c9f2e0cc436eca9eede949254eb13a4a0d2f9b47"
     end
 
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.6/uatu-0.1.1-alpha.6-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "510c5d473a53fa7254984c899a21f8da0e3203317a84c372c1ba20441acb1234"
+      url "https://github.com/almeidx/uatu/releases/download/v0.1.1-alpha.7/uatu-0.1.1-alpha.7-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "609861285367bd18159b655bdeb4ec6e7a72bb7bccc0e8587803f207e7aa33b3"
     end
   end
 
